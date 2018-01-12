@@ -34,8 +34,9 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 10pt;
     margin-right: 20px;
+    margin-bottom: 50px;
 }
 
 .post {
