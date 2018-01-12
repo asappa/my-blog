@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Ankita's Blog</title>
-  </head>
-  <body>
-    <div>
-      <h1>Welcome to my blog!</h1>
-    </div>
-    <div>
-      {% for i in posts %}
-        <p> {{i.published_date}} </p>
-        <p> <h1> <a href="">{{ i.title }}</a></h1></p>
-        <h2> {{i.text }}</h2>
-      {% endfor %}
-    </div>
-    
+{% extends 'blog_app/base.html'%}
+{% block content %}
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+{% endblock %}
